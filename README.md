@@ -27,3 +27,13 @@
     "lint": "eslint src --ext .ts --fix"
   },
 ```
+
+# migrate
+```shell
+# criar a primeira migration
+# tem que configurar o package.json pq o tsx não conversa com knex, logo, temos que fazer um load
+"knex": "node --no-warnings --import tsx ./node_modules/.bin/knex",
+# executar, os "--~abaixo, serve para indicar que estes parâmetros são do knex
+npm run knex -- migrate:make create-documents
+
+```
